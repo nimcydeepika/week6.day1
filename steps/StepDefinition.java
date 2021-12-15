@@ -1,6 +1,7 @@
 package steps;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,8 +12,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class StepDefinition {
-	public ChromeDriver driver;
+public class StepDefinition extends BaseClass {
+/*	public ChromeDriver driver;
 	
 	@Given("Open the chrome browser")
 	public void openBrowser() {
@@ -26,9 +27,10 @@ public class StepDefinition {
 	public void loadApplicationurl() {
 		driver.get("http://leaftaps.com/opentaps");
 
-	}
+	}*/
 	@Given("Enter the username as {string}")
 	public void enterUsername(String uName) {
+		System.out.println(driver);
 		driver.findElement(By.id("username")).sendKeys(uName);
 
 	}
